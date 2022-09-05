@@ -16,7 +16,7 @@ class ProductController extends Controller
     {   
         if(!Cache::has('products')){
             
-
+            $products = Product::get(); 
             Cache::remember('products', 3600, function() use ($products){
                 return $products;
              });
